@@ -1,15 +1,15 @@
 const express = require("express");
+
 const routes = require("./routes");
 const config = require("./config");
+const setupViewEngine = require("./config/viewEngine");
 
-const app = express();
 const port = config.PORT || 3002;
 
-app.use(routes);
+const app = express();
+setupViewEngine(app);
 
-app.get("/", (req, res) => {
-  res.json({ msg: "Hello server" });
-});
+app.use(routes);
 
 app.listen(port, () => {
   console.log(`Server is listening on port: ${port}...`);
