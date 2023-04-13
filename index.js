@@ -10,8 +10,8 @@ const port = config.PORT || 3002;
 const app = express();
 setupViewEngine(app);
 
-app.use("/static", express.static("public"));
 app.use(express.urlencoded({ extended: false }));
+app.use("/static", express.static("public"));
 app.use(routes);
 
 connectDB()
