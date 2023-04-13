@@ -5,7 +5,8 @@ const jwt = require("../lib/jsonwebtoken");
 
 exports.findByEmail = (email) => User.findOne({ email });
 
-exports.register = async (username, email, password, repeatPassword) => {
+exports.register = async (userData) => {
+  const { username, email, password, repeatPassword } = userData;
   if (password !== repeatPassword) {
     throw new Error("Passwords do not match");
   }
