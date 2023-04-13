@@ -28,8 +28,6 @@ exports.register = async (username, email, password, repeatPassword) => {
 exports.login = async (email, password) => {
   const user = await this.findByEmail(email);
 
-  console.log(user.password);
-
   if (!user) {
     throw new Error("Username or password are not correct");
   }
