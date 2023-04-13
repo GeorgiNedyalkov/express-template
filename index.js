@@ -1,8 +1,9 @@
 const express = require("express");
-const app = express();
 const routes = require("./routes");
+const config = require("./config");
 
-const port = 3000;
+const app = express();
+const port = config.PORT || 3002;
 
 app.use(routes);
 

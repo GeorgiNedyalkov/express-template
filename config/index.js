@@ -1,8 +1,14 @@
-module.exports = {
+const config = {
   production: {
-    port: 3000,
+    PORT: 3000,
+    SECRET: "someSecret",
+    MONGO_URI: "mongodb://localhost:27017",
   },
   development: {
-    port: 1234,
+    PORT: 3007,
+    SECRET: "devSecret",
+    MONGO_URI: "mongodb://localhost:27017",
   },
 };
+
+module.exports = config[process.env.node_env || "development"];
