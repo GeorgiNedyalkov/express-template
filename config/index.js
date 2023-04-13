@@ -7,7 +7,7 @@ const config = {
   development: {
     PORT: 3007,
     SECRET: "devSecret",
-    MONGO_URI: "mongodb://localhost:27017",
+    MONGO_URI: "mongodb://localhost:27017/templateDatabase",
   },
 };
 
